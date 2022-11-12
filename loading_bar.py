@@ -1,4 +1,5 @@
-def loading_bar(length, current_length, bar_length=10, dot=False, line=True, corpus=True, arrow=True, delete_line=1, percent=True):
+def loading_bar(length, current_length, bar_length=10, dot=False, line=True, corpus=True, arrow=True, delete_line=1,
+                percent=True):
     part = int(current_length / length * bar_length)
     i = 0
     while delete_line > 0:
@@ -21,4 +22,8 @@ def loading_bar(length, current_length, bar_length=10, dot=False, line=True, cor
     if corpus:
         print(']', end='')
     if percent:
-        print(' ' + str(current_length/length*100)[:4] + '%', end='')
+        # TODO numbers after , in percent has to be the same and maybe optional
+        print(' ' + str(current_length / length * 100)[:4] + '%', end='')
+    if length == current_length:
+        # TODO implement finish line
+        print('')
